@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname,'build')))
         url:'https://us6.api.mailchimp.com/3.0/lists/5bdbc1f8c6',
         method:'POST',
         headers:{
-            Authorization:'auth 8e71c0e8916746d5db141ace553ed385-us6'
+            Authorization:'auth 65b02cfdd692c7f3a4badcbbc6b1fd3b-us6'
         },
         body:postData
     }
