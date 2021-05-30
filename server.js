@@ -4,12 +4,13 @@ const app = express();
 const cors=require('cors');
 const request=require('request');
 const path=require('path')
-const port =process.env.PORT||5000;
+const port =process.env.PORT||8080;
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 app.use(express.static(path.join(__dirname,'build')))
   app.use(cors())
   app.post('/email',(req,res)=>{
+      console.log(req.body.email)
     const data={
         members:[
             {
@@ -23,7 +24,7 @@ app.use(express.static(path.join(__dirname,'build')))
         url:'https://us6.api.mailchimp.com/3.0/lists/5bdbc1f8c6',
         method:'POST',
         headers:{
-            Authorization:'auth 65b02cfdd692c7f3a4badcbbc6b1fd3b-us6'
+            Authorization:'auth 9a92308bc239f1ceef2d754912efd632-us6'
         },
         body:postData
     }
